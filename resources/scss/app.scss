@@ -1,0 +1,90 @@
+@import '@styles/helpers/_variables.scss';
+@import '@styles/helpers/_normalize.scss';
+@import '@styles/include/_include.scss';
+@import '@styles/helpers/_fonts.scss';
+
+
+html {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+body {
+  font-family: 'Museo-sans';
+  font-weight: $fw-light;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+
+  @media (max-width:1280px) {
+    max-width: 900px;
+  }
+
+  @media (max-width:1024px) {
+    max-width: 700px;
+  }
+
+  @media (max-width:800px) {
+    max-width: 600px;
+  }
+
+  @media (max-width:640px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+
+.btn {
+  background-image: -moz-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
+  background-image: -webkit-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
+  background-image: -ms-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
+  box-shadow: 0px 15px 24px 0px rgba(16, 48, 112, 0.23);
+  border-radius: $br;
+  transition: $tr;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+
+
+.elipses {
+  position: absolute;
+  width: 1300px;
+  height: 1300px;
+  right: -200px;
+  top: -300px;
+  z-index: 1;
+  transform: scale(1);
+
+
+  @media (max-width:1800px) {
+    transform: scale(0.8);
+  }
+
+  @media (max-width:1600px) {
+    transform: scale(0.6);
+  }
+
+  >span {
+    width: 1300px;
+    height: 1300px;
+    border: 1px solid rgba(186, 193, 202, 0.4);
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: 60%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+
+    &.mini {
+      width: 1000px;
+      height: 1000px;
+    }
+
+  }
+}
