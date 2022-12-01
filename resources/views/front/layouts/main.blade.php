@@ -55,7 +55,7 @@
           <h2>Настройка <span>bitrix24</span></h2>
           <button class="open_modal btn">Оставить заявку</button>
         </div>
-        <div class="header__intro__image">
+        <div class="header__intro__image parallax-wrap" value="-4">
           <img src="{{Vite::asset('resources/assets/intro.png')}}" alt="">
         </div>
       </div>
@@ -93,7 +93,31 @@
       </div>
     </div>
   </section>
-  @yield('content')
+
+  @include('front.components.step')
+  @include('front.components.cert')
+  @include('front.components.faq')
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__item">
+          <h2>{{env("APP_NAME")}}</h2>
+        </div>
+        <div class="footer__item">
+          <a href="#">Казахстан, г. Алматы, <br>
+            ул. Ади-шарипова 92,офис 35</a>
+        </div>
+        <div class="footer__item">
+          <a href="#">+7 708 986 76 27</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
 
   <svg width="0" height="0" class="hidden">
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1337 1014" id="header1">

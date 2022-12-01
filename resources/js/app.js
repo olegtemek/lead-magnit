@@ -19,5 +19,35 @@ if (document.querySelector('.header__burger')) {
       }
     })
   })
+}
 
+if (document.querySelector('.faq__item')) {
+  let faqs = document.querySelectorAll('.faq__item-title')
+
+  faqs.forEach(faq => {
+    faq.addEventListener('click', function () {
+      faq.parentNode.classList.toggle('active')
+      let panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+
+    })
+  });
+}
+
+
+if (document.querySelector('header')) {
+  document.querySelector('header').addEventListener("mousemove", parallax);
+  function parallax(event) {
+    this.querySelectorAll(".parallax-wrap").forEach((shift) => {
+      const position = shift.getAttribute("value");
+      const x = (window.innerWidth - event.pageX * position) / 90;
+      const y = (window.innerHeight - event.pageY * position) / 90;
+
+      shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    });
+  }
 }
