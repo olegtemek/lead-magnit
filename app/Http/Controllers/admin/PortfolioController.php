@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Setting;
+use App\Http\Requests\PortfolioRequest;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $setting = Setting::find(1);
-        return view('admin.home.index', compact('setting'));
+        $portfolios = Portfolio::all();
+        return view('admin.portfolio.index', compact('portfolios'));
     }
 
     /**
@@ -26,7 +27,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.portfolio.create');
     }
 
     /**
@@ -37,7 +38,14 @@ class IndexController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Portfolio::create([
+            'link' => $request->link,
+            'image' => $request->image,
+            'task' => $request->task,
+        ]);
+
+        return redirect()->route('admin.portfolio.index')->with('message', 'Кейс успешно добавлен');
     }
 
     /**
@@ -59,7 +67,8 @@ class IndexController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Portfolio::find($id);
+        return view('admin.portfolio.edit', compact('item'));
     }
 
     /**
@@ -69,21 +78,15 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PortfolioRequest $request, $id)
     {
-        $data = $request->validate([
-            'number' => 'required',
-            'map' => 'required',
-            'address' => 'required',
+        Portfolio::find($id)->update([
+            'link' => $request->link,
+            'image' => $request->image,
+            'task' => $request->task,
         ]);
 
-        Setting::find($id)->update([
-            'number' => $request->number,
-            'address' => $request->address,
-            'map' => $request->map,
-        ]);
-
-        return redirect()->route('admin.home.index')->with('message', 'Настройки успешно обновлены');
+        return redirect()->route('admin.portfolio.index')->with('message', 'Кейс успешно редактирован');
     }
 
     /**
@@ -94,6 +97,7 @@ class IndexController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Portfolio::destroy($id);
+        return redirect()->route('admin.portfolio.index')->with('message', 'Кейс успешно удален');
     }
 }

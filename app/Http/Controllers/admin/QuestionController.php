@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Setting;
+use App\Http\Requests\QuestionRequest;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $setting = Setting::find(1);
-        return view('admin.home.index', compact('setting'));
+        $questions = Question::all();
+        return view('admin.question.index', compact('questions'));
     }
 
     /**
@@ -26,7 +27,7 @@ class IndexController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.question.create');
     }
 
     /**
@@ -35,9 +36,13 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(QuestionRequest $request)
     {
-        //
+        Question::create([
+            'answer' => $request->answer,
+            'question' => $request->question
+        ]);
+        return redirect()->route('admin.question.index')->with('message', 'Вопрос-ответ был добавлен');
     }
 
     /**
@@ -59,7 +64,8 @@ class IndexController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Question::find($id);
+        return view('admin.question.edit', compact('item'));
     }
 
     /**
@@ -71,19 +77,11 @@ class IndexController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
-            'number' => 'required',
-            'map' => 'required',
-            'address' => 'required',
+        Question::find($id)->update([
+            'answer' => $request->answer,
+            'question' => $request->question
         ]);
-
-        Setting::find($id)->update([
-            'number' => $request->number,
-            'address' => $request->address,
-            'map' => $request->map,
-        ]);
-
-        return redirect()->route('admin.home.index')->with('message', 'Настройки успешно обновлены');
+        return redirect()->route('admin.question.index')->with('message', 'Вопрос-ответ был изменен');
     }
 
     /**
@@ -94,6 +92,7 @@ class IndexController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Question::destroy($id);
+        return redirect()->route('admin.question.index')->with('message', 'Вопрос-ответ был удален');
     }
 }

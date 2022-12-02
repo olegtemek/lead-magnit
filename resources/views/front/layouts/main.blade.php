@@ -20,7 +20,7 @@
                 <a href="#">Кейсы</a>
               </li>
               <li>
-                <a href="#">Оставить заявку</a>
+                <button class="open-modal">Оставить заявку</button>
               </li>
               <li>
                 <a href="#">Контакты</a>
@@ -29,7 +29,7 @@
           </nav>
         </div>
         <div class="header__right">
-          <a href="#">+7 708 986 76 27</a>
+          <a href="tel:{{$data['setting']->number}}">{{$data['setting']->number}}</a>
         </div>
         <div class="header__burger">
           <svg class="icon">
@@ -42,7 +42,7 @@
               <a href="#">Кейсы</a>
             </li>
             <li>
-              <a href="#">Оставить заявку</a>
+              <button  class="open-modal">Оставить заявку</button>
             </li>
             <li>
               <a href="#">Контакты</a>
@@ -53,7 +53,7 @@
       <div class="header__intro">
         <div class="header__intro__text">
           <h2>Настройка <span>bitrix24</span></h2>
-          <button class="open_modal btn">Оставить заявку</button>
+          <button class="open-modal btn">Оставить заявку</button>
         </div>
         <div class="header__intro__image parallax-wrap" value="-4">
           <img src="{{Vite::asset('resources/assets/intro.png')}}" alt="">
@@ -94,9 +94,13 @@
     </div>
   </section>
 
+  @include('front.components.problem')
+  @include('front.components.slider')
+  @include('front.components.form')
   @include('front.components.step')
   @include('front.components.cert')
   @include('front.components.faq')
+  @include('front.components.question')
 
   <footer class="footer">
     <div class="container">
@@ -105,18 +109,20 @@
           <h2>{{env("APP_NAME")}}</h2>
         </div>
         <div class="footer__item">
-          <a href="#">Казахстан, г. Алматы, <br>
-            ул. Ади-шарипова 92,офис 35</a>
+          <a href="{{$data['setting']->map}}" target="_blank">{!! $data['setting']->address !!}</a>
         </div>
         <div class="footer__item">
-          <a href="#">+7 708 986 76 27</a>
+          <a href="tel:{{$data['setting']->number}}">{{$data['setting']->number}}</a>
         </div>
       </div>
     </div>
   </footer>
 
 
-
+  <div class="alert">
+    Ваша заявка успешно отправлена
+  </div>
+  @include('front.components.modal')
 
 
   <svg width="0" height="0" class="hidden">

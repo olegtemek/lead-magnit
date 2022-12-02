@@ -9,10 +9,12 @@ body {
   font-family: 'Museo-sans';
   font-weight: $fw-light;
   color: $black;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
 
   @media (max-width:1280px) {
@@ -25,6 +27,7 @@ body {
 
   @media (max-width:800px) {
     max-width: 600px;
+    width: auto;
   }
 
   @media (max-width:640px) {
@@ -41,6 +44,7 @@ body {
   box-shadow: 0px 15px 24px 0px rgba(16, 48, 112, 0.23);
   border-radius: $br;
   transition: $tr;
+  color: $white;
 }
 
 
@@ -52,7 +56,8 @@ body {
   font-size: 55px;
   padding-bottom: 80px;
 
-  @media (max-width:1280px) {
+
+  @media (max-width:1400px) {
     font-size: 45px;
     padding-bottom: 60px;
   }
@@ -88,5 +93,53 @@ body {
     margin: 0 auto;
     max-width: 800px;
     display: block;
+  }
+}
+
+
+.error {
+  font-size: 14px;
+  color: red;
+  position: absolute;
+  top: -16px;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: scale(0);
+  transition: $tr;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.alert {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  right: 40px;
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  transform: translate(0, -100%);
+  transition: $tr;
+
+  &.active {
+    overflow: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  &.good {
+    background-color: green;
+    color: $white;
+  }
+
+  &.bad {
+    background-color: red;
+    color: $white;
   }
 }

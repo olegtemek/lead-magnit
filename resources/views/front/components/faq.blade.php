@@ -4,33 +4,27 @@
       причины, <span>по которым чаще всего откладывают внедрение crm</span>
     </h2>
     <div class="faq__wrapper">
-      <div class="faq__item active">
+     
+      @foreach ($data['questions'] as $key => $item)
+      <div class="faq__item
+      @if ($key == 0)
+      active
+      @endif
+      ">
         <div class="faq__item-title">
-          <p>Внедрение стоит недешево?</p>
-          <img src="{{Vite::asset('resources/assets/arrow.png')}}" alt="Стрелка в менЮ)">
+          <p>{{$item->question}}</p>
+          <img src="{{Vite::asset('resources/assets/arrow.png')}}" alt="Стрелка {{$item->question}}">
         </div>
-        <div class="faq__item-content" style="max-height: 600px">
-          <p>Стоимость на внедрение CRM системы у нас начинается от N-го кол-ва тг и цена меняется в зависимости от необходимых вам изменений.</p>
+        <div class="faq__item-content"
+        @if ($key == 0)
+        style="max-height: 600px"
+        @endif
+        >
+          <p>{{$item->answer}}</p>
         </div>
       </div>
-      <div class="faq__item">
-        <div class="faq__item-title">
-          <p>Внедрение стоит недешево?</p>
-          <img src="{{Vite::asset('resources/assets/arrow.png')}}" alt="Стрелка в менЮ)">
-        </div>
-        <div class="faq__item-content">
-          <p>Стоимость на внедрение CRM системы у нас начинается от N-го кол-ва тг и цена меняется в зависимости от необходимых вам изменений.</p>
-        </div>
-      </div>
-      <div class="faq__item">
-        <div class="faq__item-title">
-          <p>Внедрение стоит недешево?</p>
-          <img src="{{Vite::asset('resources/assets/arrow.png')}}" alt="Стрелка в менЮ)">
-        </div>
-        <div class="faq__item-content">
-          <p>Стоимость на внедрение CRM системы у нас начинается от N-го кол-ва тг и цена меняется в зависимости от необходимых вам изменений.</p>
-        </div>
-      </div>
+      @endforeach
+      
     </div>
   </div>
 </section>
