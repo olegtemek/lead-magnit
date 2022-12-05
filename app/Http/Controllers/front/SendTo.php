@@ -22,8 +22,8 @@ class SendTo extends Controller
         // Lead
 
         // Link to crm.contact.add.json
-        $queryURL = '';
 
+        $queryURL = '';
 
         // формируем параметры для создания лида	
         $queryData = http_build_query(array(
@@ -68,7 +68,7 @@ class SendTo extends Controller
             "fields" => array(
                 "CONTACT_ID" => $leadId,
                 "ASSIGNED_BY_ID" => 85,
-                "TITLE" => 'Заявка с leadmagnit.kz', //
+                "TITLE" => 'Заявка с сайта ' . env('APP_NAME'), //
                 "STATUS_ID" => "NEW", // статус лида
                 "UTM_SOURCE" => $request->post('utm_source'),
                 "UTM_MEDIUM" => $request->post('utm_medium'),
