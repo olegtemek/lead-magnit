@@ -52,7 +52,6 @@
     z-index: 999;
 
     &.active {
-
       .header__burger {
         cursor: default;
 
@@ -116,9 +115,33 @@
             font-weight: $fw-medium;
             transition: $tr;
             color: inherit;
+            position: relative;
+
+            &::after {
+              content: '';
+              top: -140px;
+              left: 50%;
+              position: absolute;
+              transform: translateX(-50%);
+              width: 70px;
+              height: 22px;
+              display: block;
+              background-image: url('@assets/bubble-top.png');
+              background-size: cover;
+              background-repeat: no-repeat;
+              overflow: hidden;
+              opacity: 0;
+              transition: $tr;
+            }
 
             &:hover {
               color: $purple;
+
+              &::after {
+                top: -60px;
+                overflow: visible;
+                opacity: 1;
+              }
             }
           }
         }

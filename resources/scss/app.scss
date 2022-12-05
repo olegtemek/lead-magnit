@@ -38,13 +38,17 @@ body {
 
 
 .btn {
-  background-image: -moz-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
-  background-image: -webkit-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
-  background-image: -ms-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
+  background: -moz-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
+  background: -webkit-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
+  background: -ms-linear-gradient(172deg, rgb(114, 85, 202) 0%, rgb(215, 177, 255) 100%);
   box-shadow: 0px 15px 24px 0px rgba(16, 48, 112, 0.23);
   border-radius: $br;
   transition: $tr;
   color: $white;
+
+  &:hover {
+    transform: scale(1.04);
+  }
 }
 
 

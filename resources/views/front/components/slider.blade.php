@@ -1,5 +1,5 @@
 
-<section class="slider">
+<section class="slider" id="cases">
   <div class="container">
     <div class="slider__wrapper">
       <h2 class="title">Наши кейсы</h2>

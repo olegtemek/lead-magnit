@@ -17,13 +17,13 @@
           <nav>
             <ul>
               <li>
-                <a href="#">Кейсы</a>
+                <a href="#cases">Кейсы</a>
               </li>
               <li>
                 <button class="open-modal">Оставить заявку</button>
               </li>
               <li>
-                <a href="#">Контакты</a>
+                <a href="#contacts">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -39,13 +39,13 @@
           <ul>
             <span>&#9587;</span>
             <li>
-              <a href="#">Кейсы</a>
+              <a href="#cases">Кейсы</a>
             </li>
             <li>
               <button  class="open-modal">Оставить заявку</button>
             </li>
             <li>
-              <a href="#">Контакты</a>
+              <a href="#contacts">Контакты</a>
             </li>
           </ul>
         </div>
@@ -102,7 +102,7 @@
   @include('front.components.faq')
   @include('front.components.question')
 
-  <footer class="footer">
+  <footer class="footer" id="contacts">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__item">
