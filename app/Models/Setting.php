@@ -9,5 +9,5 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['map', 'number', 'address'];
+    protected $fillable = ['map', 'number', 'address', 'number_whatsapp'];
 }

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('number');
+            $table->string('number_whatsapp');
             $table->string('address');
             $table->string('map');
             $table->timestamps();

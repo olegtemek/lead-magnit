@@ -4,11 +4,11 @@
     <div class="step__wrapper">
       <div class="step__item">
         <span>1</span>
-        <p>Демонтрация</p>
+        <p>Демонстрация</p>
       </div>
       <div class="step__item">
         <span>2</span>
-        <p>Сбор и определение бизнес процессов</p>
+        <p>Сбор и определение бизнес-процессов</p>
       </div>
       <div class="step__item">
         <span>3</span>

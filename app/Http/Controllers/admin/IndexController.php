@@ -73,6 +73,7 @@ class IndexController extends Controller
     {
         $data = $request->validate([
             'number' => 'required',
+            'number_whatsapp' => 'required',
             'map' => 'required',
             'address' => 'required',
         ]);
@@ -80,6 +81,7 @@ class IndexController extends Controller
         Setting::find($id)->update([
             'number' => $request->number,
             'address' => $request->address,
+            'number_whatsapp' => $request->number_whatsapp,
             'map' => $request->map,
         ]);
 

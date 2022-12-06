@@ -25,6 +25,15 @@
           </div>
           <div class="col-sm-4">
             <div class="form-group">
+              <label>Номер телефона whatsapp</label>
+              @error('number_whatsapp')
+              <span class="error text-danger">{{ $message }}</span>
+              @enderror
+              <input type="text" value="{{ $setting->number_whatsapp }}" class="form-control" name="number_whatsapp" placeholder="Заголовок">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
               <label>Адрес</label>
               @error('address')
               <span class="error text-danger">{{ $message }}</span>

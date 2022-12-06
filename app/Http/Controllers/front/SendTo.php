@@ -23,7 +23,7 @@ class SendTo extends Controller
 
         // Link to crm.contact.add.json
 
-        $queryURL = "";
+        $queryURL = '';
 
         // формируем параметры для создания лида	
         $queryData = http_build_query(array(
@@ -62,7 +62,7 @@ class SendTo extends Controller
 
         //link to crm.deal.add.json
 
-        $queryURL = "";
+        $queryURL = '';
 
         $queryData = http_build_query(array(
             "fields" => array(

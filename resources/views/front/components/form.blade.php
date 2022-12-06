@@ -6,7 +6,7 @@
       </div>
       <div class="form__right">
         <h2>Оставляйте <span>заявку</span></h2>
-        <p>на консультацию и мы покажем возможности crm</p>
+        <p>и мы покажем возможности crm</p>
         <div class="form__right-form">
           <div class="form__right-form-wrapper">
             <div class="form__right-form-item">
@@ -20,7 +20,7 @@
           </div>
           <div class="form__right-form-bottom">
             <button class="btn send_data">отправить</button>
-            <p>Нажимая кнопку "отправить" вы соглашаетесь на сбор информации и <a href="#" target="_blank">условиями конфидециальности</a></p>
+            <p>Нажимая кнопку "отправить", вы соглашаетесь на сбор информации и <a href="#" target="_blank">условиями конфидециальности</a></p>
           </div>
         </div>
       </div>

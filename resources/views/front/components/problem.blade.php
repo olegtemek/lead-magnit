@@ -2,7 +2,7 @@
   <div class="container">
     <div class="problem__wrapper">
       <div class="problem__left">
-        <h2>Проблемы которые мы решаем</h2>
+        <h2>Проблемы, которые мы решаем</h2>
         <img src="{{Vite::asset('resources/assets/cloud.png')}}" alt="Облачки)">
       </div>
       <div class="problem__right">
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="problem__right-bottom">
-          <h2>Мы знаем как избавится от этих проблем</h2>
+          <h2>Мы знаем как избавиться от этих проблем</h2>
           <button class="btn open-modal">Решите мою проблему</button>
         </div>
       </div>
