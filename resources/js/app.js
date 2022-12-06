@@ -4,6 +4,10 @@ import.meta.glob([
   '../assets/**',
 ]);
 
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox.css";
+
+
 
 
 import Swiper, { Navigation, Pagination } from 'swiper';

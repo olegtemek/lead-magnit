@@ -29,7 +29,7 @@
           </div>
           <div class="problem__right-top-item">
             <img src="{{Vite::asset('resources/assets/check.png')}}" alt="check">
-            <p>Руководство 80% времени занимаются мелкой текучкой</p>
+            <p>Руководство 80% времени занимается мелкой текучкой</p>
           </div>
         </div>
         <div class="problem__right-bottom">

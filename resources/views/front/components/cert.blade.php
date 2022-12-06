@@ -6,9 +6,8 @@
         <p><span>Наша компания</span>Официально сертифицированный партнер bitrix24</p>
       </div>
       <div class="cert__right">
-        <a href="/images/cert.pdf" target="_blank">
-          <img src="{{Vite::asset('resources/assets/download.png')}}" alt="Download cerificate">
-          Скачать сертификат соответствия
+        <a data-fancybox data-src="{{Vite::asset('resources/assets/cert.png')}}">
+          <img src="{{Vite::asset('resources/assets/cert-preview.jpg')}}" alt="Download cerificate">
         </a>
       </div>
     </div>

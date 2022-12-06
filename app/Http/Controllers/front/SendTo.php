@@ -31,6 +31,7 @@ class SendTo extends Controller
                 "NAME" => $name,
                 "TITLE" => 'Новый пользователь(lead)',
                 "STATUS_ID" => "NEW",
+                "ASSIGNED_BY_ID" => 1,
                 "PHONE" => array(array("VALUE" => $number, "VALUE_TYPE" => "WORK")),
             ),
 
@@ -67,7 +68,7 @@ class SendTo extends Controller
         $queryData = http_build_query(array(
             "fields" => array(
                 "CONTACT_ID" => $leadId,
-                "ASSIGNED_BY_ID" => 85,
+                "ASSIGNED_BY_ID" => 1,
                 "TITLE" => 'Заявка с сайта ' . env('APP_NAME'), //
                 "STATUS_ID" => "NEW", // статус лида
                 "UTM_SOURCE" => $request->post('utm_source'),

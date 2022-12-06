@@ -18,7 +18,7 @@
             </div>
             <div class="swiper-slide-right-item">
               <h4>Результат:</h4>
-              <a href="{{$port->link}}" target="_blank" class="btn">Смотреть отзыв</a>
+              <a data-fancybox data-src="/{{$port->link}}" class="btn">Смотреть отзыв</a>
             </div>
           </div>
         </div>

@@ -24,13 +24,18 @@
               <input type="text" value="{{ $item->task }}" class="form-control" name="task" placeholder="Цель">
             </div>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <div class="form-group">
-              <label>Ссылка</label>
               @error('link')
-              <span class="error text-danger">{{ $message }}</span>
+                <span class="error text-danger">{{ $message }}</span>
               @enderror
-              <input type="text" value="{{ $item->link }}" class="form-control" name="link" placeholder="Ссылка">
+              <div class="row col-sm-4 input-group">
+                <label style="display: block; width:100%">Изображение</label>
+                <input type="text" class="form-control" id="link" name="link" value="{{ $item->link }}">
+                <div class="input-group-prepend">
+                  <a href="" class="popup_selector btn btn-success" data-inputid="link"><i class="fas fa-file"></i></a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-sm-6">
@@ -39,7 +44,7 @@
                 <span class="error text-danger">{{ $message }}</span>
               @enderror
               <div class="row col-sm-4 input-group">
-                <label style="display: block; width:100%">Изображение</label>
+                <label style="display: block; width:100%">Изображение в блоке</label>
                 <input type="text" class="form-control" id="image" name="image" value="{{ $item->image }}">
                 <div class="input-group-prepend">
                   <a href="" class="popup_selector btn btn-success" data-inputid="image"><i class="fas fa-file"></i></a>
