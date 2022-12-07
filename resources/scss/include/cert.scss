@@ -38,6 +38,10 @@
     font-weight: $fw-bold;
     text-transform: uppercase;
 
+    @media (max-width:800px) {
+      margin-bottom: 10px;
+    }
+
 
     h3 {
       font-size: 22px;
@@ -88,6 +92,12 @@
   }
 
   &__right {
+    padding-right: 80px;
+
+    @media (max-width:1024px) {
+      padding-right: 0;
+    }
+
     a {
       display: flex;
       flex-direction: column;
@@ -96,17 +106,22 @@
       color: $purple;
       text-decoration: underline;
       text-align: center;
+      cursor: pointer;
 
       img {
-        margin-bottom: 10px;
-        width: 300px;
-        height: 240px;
-        object-fit: cover;
+        width: 220px;
+        height: 300px;
         border-radius: $br;
+        object-fit: cover;
 
         @media (max-width:1024px) {
           width: 200px;
-          height: 140px;
+          height: 280px;
+        }
+
+        @media (max-width:540px) {
+          width: 140px;
+          height: 220px;
         }
       }
     }
