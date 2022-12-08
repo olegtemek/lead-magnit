@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="question__left-form-bottom">
-            <button class="btn send_data">отправить</button>
+            <button class="btn send_data"><span>отправить</span></button>
             <p>Нажимая кнопку "отправить", вы соглашаетесь на сбор информации и с условиями конфидециальности</p>
           </div>
         </div>

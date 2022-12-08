@@ -55,7 +55,7 @@
       <div class="header__intro">
         <div class="header__intro__text">
           <h2>Настройка <span>bitrix24</span></h2>
-          <button class="open-modal btn">Оставить заявку</button>
+          <button class="open-modal btn"><span>Оставить заявку</span></button>
         </div>
         <div class="header__intro__image parallax-wrap" value="-4">
           <img src="{{Vite::asset('resources/assets/intro.png')}}" alt="">

@@ -34,7 +34,7 @@
         </div>
         <div class="problem__right-bottom">
           <h2>Мы знаем как избавиться от этих проблем</h2>
-          <button class="btn open-modal">Решите мою проблему</button>
+          <button class="btn open-modal"><span>Решите мою проблему</span></button>
         </div>
       </div>
     </div>
